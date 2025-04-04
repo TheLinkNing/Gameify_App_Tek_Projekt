@@ -77,6 +77,21 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Assignment Type:"
 
+[node name="OptionButton" type="OptionButton" parent="container/edger/mother_seperator/ass_type"]
+layout_mode = 2
+size_flags_vertical = 4
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Creative"
+popup/item_0/id = 0
+popup/item_1/text = "Logical"
+popup/item_1/id = 1
+popup/item_2/text = "Exercise"
+popup/item_2/id = 2
+popup/item_3/text = "Chores"
+popup/item_3/id = 3
+
 [node name="time_comp" type="VBoxContainer" parent="container/edger/mother_seperator"]
 layout_mode = 2
 
@@ -94,3 +109,8 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Assignment Difficulty:"
+
+[node name="HSlider" type="HSlider" parent="container/edger/mother_seperator/ass_diff"]
+layout_mode = 2
+max_value = 4.0
+value = 2.0
