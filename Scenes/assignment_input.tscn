@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=3 uid="uid://xlcp2usdg18d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3dgg"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="AssignmentInput" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="container" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3dgg")
+
+[node name="edger" type="MarginContainer" parent="container"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="mother_seperator" type="VBoxContainer" parent="container/edger"]
+layout_mode = 2
+
+[node name="ass_name" type="VBoxContainer" parent="container/edger/mother_seperator"]
+layout_mode = 2
+
+[node name="name_title" type="Label" parent="container/edger/mother_seperator/ass_name"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Assignment Name (max. length 32 characters):"
+
+[node name="input_name" type="LineEdit" parent="container/edger/mother_seperator/ass_name"]
+layout_mode = 2
+placeholder_text = "type name here.."
+max_length = 32
+
+[node name="ass_type" type="VBoxContainer" parent="container/edger/mother_seperator"]
+layout_mode = 2
+
+[node name="type_title" type="Label" parent="container/edger/mother_seperator/ass_type"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Assignment Type:"
+
+[node name="time_comp" type="VBoxContainer" parent="container/edger/mother_seperator"]
+layout_mode = 2
+
+[node name="time_title" type="Label" parent="container/edger/mother_seperator/time_comp"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Time to complete:"
+
+[node name="ass_diff" type="VBoxContainer" parent="container/edger/mother_seperator"]
+layout_mode = 2
+
+[node name="diff_title" type="Label" parent="container/edger/mother_seperator/ass_diff"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Assignment Difficulty:"
