@@ -8,8 +8,5 @@ func _on_button_pressed() -> void:
 	var ass_type = %type_option.selected
 	var ass_time = %time_option.selected
 	var	ass_diff: int = %diff_slider.value
-	print(ass_name)
-	print(ass_type)
-	print(ass_time)
-	print(ass_diff)
+	AssignmentManager.instantiate_new_assignment(ass_name, ass_type, ass_time, ass_diff)
 	
