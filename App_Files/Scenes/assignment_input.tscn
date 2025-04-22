@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://xlcp2usdg18d"]
+[gd_scene load_steps=3 format=3 uid="uid://xlcp2usdg18d"]
+
+[ext_resource type="Script" uid="uid://wiq8cxcok2wv" path="res://App_Files/Scripts/assignment_input.gd" id="1_8tk2y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3dgg"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
@@ -19,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8tk2y")
 
 [node name="background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -31,15 +34,13 @@ color = Color(0.156863, 0.156863, 0.156863, 1)
 
 [node name="container" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 556.0
+offset_top = 304.0
+offset_right = -556.0
+offset_bottom = -304.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g3dgg")
@@ -64,6 +65,7 @@ size_flags_vertical = 0
 text = "Assignment Name (max. length 32 characters):"
 
 [node name="input_name" type="LineEdit" parent="container/edger/mother_seperator/ass_name"]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "type name here.."
 max_length = 32
@@ -77,7 +79,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Assignment Type:"
 
-[node name="OptionButton" type="OptionButton" parent="container/edger/mother_seperator/ass_type"]
+[node name="type_option" type="OptionButton" parent="container/edger/mother_seperator/ass_type"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 selected = 0
@@ -99,7 +102,21 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Time to complete:"
+text = "Time to complete (in minutes):"
+
+[node name="time_option" type="OptionButton" parent="container/edger/mother_seperator/time_comp"]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "5 min."
+popup/item_0/id = 0
+popup/item_1/text = "10 min."
+popup/item_1/id = 1
+popup/item_2/text = "15 min."
+popup/item_2/id = 2
+popup/item_3/text = "30 min."
+popup/item_3/id = 3
 
 [node name="ass_diff" type="VBoxContainer" parent="container/edger/mother_seperator"]
 layout_mode = 2
@@ -110,7 +127,43 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Assignment Difficulty:"
 
-[node name="HSlider" type="HSlider" parent="container/edger/mother_seperator/ass_diff"]
+[node name="HBoxContainer" type="HBoxContainer" parent="container/edger/mother_seperator/ass_diff"]
 layout_mode = 2
-max_value = 4.0
-value = 2.0
+
+[node name="Label" type="Label" parent="container/edger/mother_seperator/ass_diff/HBoxContainer"]
+layout_mode = 2
+text = "Easy"
+
+[node name="VSeparator" type="VSeparator" parent="container/edger/mother_seperator/ass_diff/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="container/edger/mother_seperator/ass_diff/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Normal"
+
+[node name="VSeparator2" type="VSeparator" parent="container/edger/mother_seperator/ass_diff/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="container/edger/mother_seperator/ass_diff/HBoxContainer"]
+layout_mode = 2
+text = "Hard"
+
+[node name="diff_slider" type="HSlider" parent="container/edger/mother_seperator/ass_diff"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 2.0
+value = 1.0
+
+[node name="HSeparator" type="HSeparator" parent="container/edger/mother_seperator"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="container/edger/mother_seperator"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Confirm"
+
+[connection signal="pressed" from="container/edger/mother_seperator/Button" to="." method="_on_button_pressed"]

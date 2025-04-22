@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="AppOliverAndMe"
+run/main_scene="uid://xlcp2usdg18d"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AssignmentManager="*res://App_Files/Scripts/assignment_manager.gd"
 
 [display]
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmhrdts80sgnk"]
+
+[ext_resource type="Script" uid="uid://g0py732glwvp" path="res://App_Files/Scripts/assignment.gd" id="1_iphdh"]
+
+[node name="Assignment" type="Node"]
+script = ExtResource("1_iphdh")
