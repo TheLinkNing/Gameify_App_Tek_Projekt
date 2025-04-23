@@ -67,5 +67,10 @@ func make_new_assignment(new_name, new_ass_type, new_ass_time, new_ass_diff):
 	
 	# prints the results for debuging purposses
 	print(name + " " + ass_type_str + " " + str(ass_time_min) + "min. " + ass_diff_str)
-	
-	
+
+func start_assignment():
+	timer.start()
+
+# called on timer timeout, to reward the user
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
