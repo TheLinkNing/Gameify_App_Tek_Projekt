@@ -1,14 +1,57 @@
 extends Node
 class_name	new_assignment
 
-# type of assignment, defined through a preditermined list of possible assignments
+# type of assignment in int
 var ass_type: int
-# time in minutes
-var ass_time: int
-# difficulty on a scale of easy to difficult
-var ass_diff: int
+# type of assignment derived from ass_type
+var ass_type_str: String:
+	get:
+		match ass_type:
+			0:
+				return "Creative"
+			1:
+				return "Logical"
+			2:
+				return "Exercise"
+			3:
+				return "Chores"
+			_:
+				return "idk"
 
-# This function assigns values for the current assignment 
+# time in int
+var ass_time: int
+# time in minutes, where it derives the time based on ass_time
+var ass_time_min: int:
+	get:
+		match ass_time:
+			0:
+				return 5
+			1:
+				return 10
+			2:
+				return 15
+			3:
+				return 30
+			_:
+				return 68
+
+# difficulty in int
+var ass_diff: int
+# difficulty from easy to hard derives the difficulty from ass_diff
+var ass_diff_str: String:
+	get:
+		match ass_time:
+			0:
+				return "Easy"
+			1:
+				return "Normal"
+			2:
+				return "Hard"
+			_:
+				return "IMPOSSIBLE"
+
+
+# This function assigns values for the current instance of assignment 
 func make_new_assignment(new_name, new_ass_type, new_ass_time, new_ass_diff):
 	
 	name = new_name
@@ -16,4 +59,5 @@ func make_new_assignment(new_name, new_ass_type, new_ass_time, new_ass_diff):
 	ass_time = new_ass_time
 	ass_diff = new_ass_diff
 	
-	print(name + " " + str(ass_type) + " " + str(ass_time) + " " + str(ass_diff))
+	# prints the results for debuging purposses
+	print(name + " " + ass_type_str + " " + str(ass_time_min) + "min. " + ass_diff_str)

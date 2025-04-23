@@ -67,7 +67,7 @@ text = "Assignment Name (max. length 32 characters):"
 [node name="input_name" type="LineEdit" parent="container/edger/mother_seperator/ass_name"]
 unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = "type name here.."
+placeholder_text = "type name here..."
 max_length = 32
 
 [node name="ass_type" type="VBoxContainer" parent="container/edger/mother_seperator"]
@@ -108,6 +108,7 @@ text = "Time to complete (in minutes):"
 unique_name_in_owner = true
 layout_mode = 2
 selected = 0
+allow_reselect = true
 item_count = 4
 popup/item_0/text = "5 min."
 popup/item_0/id = 0
@@ -155,7 +156,6 @@ text = "Hard"
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 2.0
-value = 1.0
 
 [node name="HSeparator" type="HSeparator" parent="container/edger/mother_seperator"]
 custom_minimum_size = Vector2(0, 20)
