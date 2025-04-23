@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xg2w3jioppa6"
-path="res://.godot/imported/Cogwheel.png-4ee1d5d250aac86a721c9cded341a7ad.ctex"
+path="res://.godot/imported/Cogwheel.png-6ddc65828fcdfe1262adff0d68765672.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://App_Files/uiGraphics/Cogwheel.png"
-dest_files=["res://.godot/imported/Cogwheel.png-4ee1d5d250aac86a721c9cded341a7ad.ctex"]
+source_file="res://appFiles/uiGraphics/Cogwheel.png"
+dest_files=["res://.godot/imported/Cogwheel.png-6ddc65828fcdfe1262adff0d68765672.ctex"]
 
 [params]
 

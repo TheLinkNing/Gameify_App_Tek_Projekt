@@ -50,6 +50,9 @@ var ass_diff_str: String:
 			_:
 				return "IMPOSSIBLE"
 
+# a reference to the timer node as a variable
+@onready var timer: Timer = $Timer
+
 
 # This function assigns values for the current instance of assignment 
 func make_new_assignment(new_name, new_ass_type, new_ass_time, new_ass_diff):
@@ -59,5 +62,10 @@ func make_new_assignment(new_name, new_ass_type, new_ass_time, new_ass_diff):
 	ass_time = new_ass_time
 	ass_diff = new_ass_diff
 	
+	# sets correct time for the timer node
+	timer.wait_time = ass_time_min*60
+	
 	# prints the results for debuging purposses
 	print(name + " " + ass_type_str + " " + str(ass_time_min) + "min. " + ass_diff_str)
+	
+	
