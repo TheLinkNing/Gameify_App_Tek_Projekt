@@ -1,18 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://xlcp2usdg18d"]
 
 [ext_resource type="Script" uid="uid://wiq8cxcok2wv" path="res://appFiles/Scripts/assignment_input.gd" id="1_8tk2y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3dgg"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[ext_resource type="StyleBox" uid="uid://d3wgod6kjloxf" path="res://appFiles/Scenes/assignment_input.tres" id="2_aix4y"]
 
 [node name="AssignmentInput" type="Control"]
 layout_mode = 3
@@ -43,7 +32,7 @@ offset_right = -556.0
 offset_bottom = -304.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_g3dgg")
+theme_override_styles/panel = ExtResource("2_aix4y")
 
 [node name="edger" type="MarginContainer" parent="container"]
 layout_mode = 2
@@ -62,7 +51,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Assignment Name (max. length 32 characters):"
+text = "Assignment Name (max. length 28 characters):"
 
 [node name="input_name" type="LineEdit" parent="container/edger/mother_seperator/ass_name"]
 unique_name_in_owner = true
