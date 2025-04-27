@@ -1,4 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bneugocmcd6vh"]
+[gd_scene load_steps=4 format=3 uid="uid://bneugocmcd6vh"]
+
+[ext_resource type="Texture2D" uid="uid://bwdjckggrj7ko" path="res://appFiles/uiGraphics/alarm_clock.png" id="1_byqcx"]
+[ext_resource type="Script" uid="uid://dc1lgvhmmscc8" path="res://appFiles/Scripts/assignment_display.gd" id="1_yihv0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ya8p7"]
 bg_color = Color(0.377919, 0.377919, 0.377919, 1)
@@ -12,19 +15,22 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="PanelContainer" type="PanelContainer"]
+[node name="AssignmentDisplay" type="PanelContainer"]
 anchors_preset = -1
 anchor_left = 0.369
 anchor_top = 0.426
 anchor_right = 0.631
 anchor_bottom = 0.574
-offset_left = 0.411987
+offset_left = -0.0880127
 offset_top = -0.0480042
-offset_right = -0.412048
+offset_right = 0.0879517
 offset_bottom = 0.0480042
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ya8p7")
+script = ExtResource("1_yihv0")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -40,17 +46,19 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ass_name_ui" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "(insert assignment name her)"
 
 [node name="ass_diff_ui" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_vertical = 6
 text = "Difficulty: "
 
 [node name="ass_type_ui" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 0
 text = "Type:"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
@@ -60,9 +68,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+icon = ExtResource("1_byqcx")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="ass_time_ui" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 text = "Time: "
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/Button" to="." method="_on_button_pressed"]

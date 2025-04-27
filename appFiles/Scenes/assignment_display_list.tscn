@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvr2wjaqjiwf5"]
+[gd_scene load_steps=4 format=3 uid="uid://bvr2wjaqjiwf5"]
 
-[ext_resource type="StyleBox" uid="uid://d3wgod6kjloxf" path="res://appFiles/Scenes/assignment_input.tres" id="1_i30s4"]
+[ext_resource type="Script" uid="uid://c2i8vb82iomm1" path="res://appFiles/Scripts/assignment_display_list.gd" id="1_cwe7e"]
+[ext_resource type="StyleBox" uid="uid://d3wgod6kjloxf" path="res://appFiles/uiGraphics/assignment_input.tres" id="1_i30s4"]
+[ext_resource type="PackedScene" uid="uid://bneugocmcd6vh" path="res://appFiles/Scenes/assignment_display.tscn" id="3_iu0f8"]
 
 [node name="AssignmentDisplayList" type="Control"]
 layout_mode = 3
@@ -9,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cwe7e")
+assignment_display = ExtResource("3_iu0f8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -39,8 +43,20 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="AssignmentSeperator" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Go Back"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
