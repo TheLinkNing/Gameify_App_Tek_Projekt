@@ -14,14 +14,14 @@ func _on_start_assignments_pressed() -> void:
 func _on_start_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://gameFiles/scenes/game.tscn")
 
-func _process(_delta: float) -> void:
+func _ready() -> void:
 	
-	if AssignmentManager.is_assignment_running == true:
-		start_assignments.disabled = true
-		start_assignments.icon = lock_icon
 	if start_assignments.icon != null:
 		start_assignments.icon = null
 		get_tree().change_scene_to_file("res://appFiles/Scenes/main_menu.tscn")
+	if AssignmentManager.is_assignment_running == true:
+		start_assignments.disabled = true
+		start_assignments.icon = lock_icon
 	if AssignmentManager.num_of_completed_ass >= 5:
 		start_game.icon = null
 		start_game.disabled = false

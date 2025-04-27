@@ -78,3 +78,4 @@ func _on_timer_timeout() -> void:
 	audio_stream_player.playing = true
 	AssignmentManager.is_assignment_running = false
 	AssignmentManager.num_of_completed_ass += 1
+	get_tree().change_scene_to_file("res://appFiles/Scenes/main_menu.tscn")
