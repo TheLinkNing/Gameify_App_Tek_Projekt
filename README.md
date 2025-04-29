@@ -1,2 +1,3 @@
-All assets in /gameFiles/assets are courtesy of an asset pack made by brackeys:
+Just as a disclaimer, all of the "gameFiles" directory was made by following a tutorial by Brackeys on youtube. The reason why is because we didn't have the time to create the game for our own project, and therefor we wanted to put in a placeholder for the game we actually wanted to make. This project was moreso a prototype show that we could make an App give you access to the game's content through making assignments, so I hope people don't see this as malicous, as we have made the whole app interface ourselves. Here is a link to the video and the assetpack we folowed/used:
+https://www.youtube.com/watch?v=LOhfqjmasi0&t=4500s&pp=ygUFZ29kb3TSBwkJhAkBhyohjO8%3D
 https://brackeysgames.itch.io/brackeys-platformer-bundle
